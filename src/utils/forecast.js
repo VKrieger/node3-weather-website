@@ -6,7 +6,7 @@ const forecast = (latitude, longitude, callback) => {
     latitude +
     "," +
     longitude;
-  request({ url, json: true }, (error, {body}) => {
+  request({ url, json: true }, (error, { body }) => {
     try {
       if (body.error) {
         callback("Unable to find location. Try another search.", undefined);
@@ -18,7 +18,8 @@ const forecast = (latitude, longitude, callback) => {
             body.current.temperature +
             " degrees. And it feels like " +
             body.current.feelslike +
-            " degrees."
+            " degrees. The humidity is " +
+            body.current.humidity
         );
       }
     } catch (error) {

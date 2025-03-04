@@ -17,7 +17,7 @@ const geocode = (address, callback) => {
         });
       }
     } catch (error) {
-      callback("Unable to connect to lacation services!", undefined);
+      callback("Unable to connect to location services!", undefined);
     }
   });
 };
